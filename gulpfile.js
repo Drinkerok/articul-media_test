@@ -8,6 +8,7 @@ const cssnano = require('cssnano');
 const webpackStream = require('webpack-stream');
 const webpackConfig = require('./webpack.config.js');
 const server = require("browser-sync").create();
+const prettyHtml = require('gulp-pretty-html');
 
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 
@@ -52,9 +53,8 @@ gulp.task('clean', () => del('build'));
 // PUG \\
 gulp.task('pug', () =>
   gulp.src(Paths.pug.src)
-    .pipe(plugin.pug({
-      pretty: true
-    }))
+    .pipe(plugin.pug())
+    .pipe(plugin.if(!isDevelopment, prettyHtml()))
     .pipe(gulp.dest(Paths.pug.dest)));
 
 
