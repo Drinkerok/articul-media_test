@@ -55,5 +55,8 @@
     "source/js/**/*.js",
     "source/img/**/*.svg",
     "source/sass/**/*.{sass,scss}"
-  ]
+  ],
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
 }

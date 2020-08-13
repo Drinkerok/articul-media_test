@@ -131,6 +131,24 @@
   }
 }
 
+.partners__hide-button {
+  @include link-border(var(--link-color, $link-color));
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--link-color, $link-color);
+  max-width: 50%;
+  cursor: pointer;
+
+  @media (min-width: $tablet) {
+    font-size: 16px;
+    align-items: center;
+  }
+}
+
 @keyframes loadingSvg {
   from {
     transform: rotate(0deg);

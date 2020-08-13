@@ -32,6 +32,7 @@ const Paths = {
     dest: 'build/svg/'
   },
   js: {
+    base: 'source/js/**/*.js',
     src: 'source/js/main.js',
     dest: 'build/js/'
   },
@@ -153,6 +154,7 @@ gulp.task('watch', () => {
   gulp.watch(Paths.pug.base, gulp.series('pug', 'server:refresh'));
   gulp.watch(Paths.sprite.src, gulp.series('img:sprite', 'pug', 'server:refresh'));
   gulp.watch(Paths.assets.src, gulp.series('copy', 'server:refresh'));
+  gulp.watch(Paths.js.base, gulp.series('scripts', 'server:refresh'));
 });
 
 

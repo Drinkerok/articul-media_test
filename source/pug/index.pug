@@ -9,8 +9,8 @@ html(lang="ru")
 
   body
     include ../../build/svg/svg-sprite.svg
-
-    main
-      include ./region/region
-
-    include ./layout/page-footer
+    .site-wrapper
+      main
+        include ./region/region
+      include ./layout/page-footer
+    script(src="js/main.js")

@@ -26,8 +26,6 @@ body {
   font-size: 12px;
   line-height: 24px;
   height: 100%;
-  display: grid;
-  grid-template-rows: 1fr min-content;
   min-width: $mobile;
 
   @media (min-width: $tablet) {
@@ -37,6 +35,13 @@ body {
   @media (min-width: $desktop) {
     font-size: 14px;
   }
+}
+
+.site-wrapper {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  overflow-x: hidden;
 }
 
 img {

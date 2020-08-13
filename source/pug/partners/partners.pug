@@ -1,4 +1,5 @@
 section.partners
+  a.visually-hidden(name="partners1")
   h2.partners__header Ассоциации и отраслевые<br>организации
   ul.partners__list
     li.partners__item
@@ -14,7 +15,7 @@ section.partners
           h3.partner__name ВПО Точмаш
           p.partner__description Ведущий многопрофильный производитель изделий высокоточного приборо- и машиностроения. Завод входит в состав Государственной корпорации по атомной энергии «Росатом».
   .partners__additional
-    a.partners__link(href="#")
+    a.partners__link(href="#", data-link="json/partners.json")
       svg(width="16", height="16", aria-hidden="true")
         use(xlink:href="#icon_load")
       |Посмотреть ещё
@@ -25,6 +26,7 @@ section.partners
       span.partners__count.partners__count--total 7
 
 section.partners
+  a.visually-hidden(name="partners2")
   h2.partners__header Научные институты и филиалы РАН, ведущие или опорные ВУЗы
   ul.partners__list
     li.partners__item
@@ -40,7 +42,7 @@ section.partners
           h3.partner__name Тихоокеанский институт географии дальневосточного отделения РАН
           p.partner__description Региональное отделение Российской академии наук, которое является развитой территориально-распределенной системой комплексных научных центров, институтов, стационаров и научных станций, заповедников, охватывающей практически всю территорию Дальневосточного федерального округа.
   .partners__additional
-    a.partners__link(href="#")
+    a.partners__link(href="#", data-link="json/partners.json")
       svg(width="16", height="16", aria-hidden="true")
         use(xlink:href="#icon_load")
       |Посмотреть ещё
@@ -49,4 +51,3 @@ section.partners
       span.partners__count.partners__count--current 2
       |&nbsp;из&nbsp;
       span.partners__count.partners__count--total 4
-
