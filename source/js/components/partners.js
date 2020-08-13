@@ -1,4 +1,4 @@
-import { getElementFromTemplate } from "./../utils/utils";
+import {getElementFromTemplate} from './../utils/utils';
 import axios from 'axios';
 
 const MIN_ITEMS_TO_SHOW = 2;
@@ -13,9 +13,8 @@ class Partner {
     this.itemsToShow = this.loadedItems.length;
     this.showedItemsEl = blockEl.querySelector('.partners__count--current');
     this.totatlItems = +blockEl.querySelector('.partners__count--total').textContent;
-    this.hideItemsEl = getElementFromTemplate( `<button class="partners__hide-button" type="button">Скрыть</button>`);
-
-    this.init()
+    this.hideItemsEl = getElementFromTemplate('<button class="partners__hide-button" type="button">Скрыть</button>');
+    this.init();
   }
 
   init() {
@@ -32,7 +31,7 @@ class Partner {
     }
     this.hideItemsEl.addEventListener('click', () => {
       this.showMinItems();
-    })
+    });
   }
 
   showItems(value) {
@@ -40,7 +39,7 @@ class Partner {
     this.listEl.innerHTML = '';
     this.loadedItems
       .filter((item, index) => index < value)
-      .forEach((itemEl, index) => {
+      .forEach((itemEl) => {
         this.listEl.appendChild(itemEl);
       });
     if (value === this.totatlItems) {
@@ -58,16 +57,16 @@ class Partner {
     this.itemsToShow = MIN_ITEMS_TO_SHOW;
     this.showItems(this.itemsToShow);
     this.listEl.scrollIntoView({
-      behavior: 'smooth'
-    })
+      behavior: 'smooth',
+    });
   }
 
   loadItems() {
     axios.get(this.loadingLink)
-      .then(({data}) => {
-        const newItems = data
+      .then((res) => {
+        const newItems = res.data
           .filter((item, index) => index < this.totatlItems - this.loadedItemsCount) // супер хак. Сервер не должен отдавать боьше максимума
-          .map(item => getElementFromTemplate(`
+          .map((item) => getElementFromTemplate(`
               <li class="partners__item">
                 <a href="${item.link}" class="partner">
                   <img src="${item.img}" alt="${item.name}" class="partner__img">
@@ -79,14 +78,14 @@ class Partner {
               </li>
             `, 'ul')
           );
-        newItems.forEach(itemEl => {
+        newItems.forEach((itemEl) => {
           this.loadedItems.push(itemEl);
         });
 
         this.loadedItemsCount += newItems.length;
-        this.showItems(this.loadedItemsCount)
-      })
+        this.showItems(this.loadedItemsCount);
+      });
   }
 }
 
-document.querySelectorAll('.partners').forEach(partnersEl => new Partner(partnersEl));
+document.querySelectorAll('.partners').forEach((partnersEl) => new Partner(partnersEl));

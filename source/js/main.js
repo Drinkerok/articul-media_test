@@ -1,2 +1,2 @@
-import './components/anchors'
-import './components/partners'
+import './components/anchors';
+import './components/partners';
