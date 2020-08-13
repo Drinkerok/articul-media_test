@@ -1,0 +1,142 @@
+.partners {
+  margin: 32px 0 0;
+
+  @media (min-width: $tablet) {
+    margin: 41px 0 0;
+  }
+
+  @media (min-width: $desktop) {
+    padding: 0 0 6px;
+    margin: 104px 0 0;
+  }
+}
+
+.partners__header {
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: bold;
+  margin: 0 0 20px;
+
+  @media (min-width: $tablet) {
+    font-size: 27px;
+    line-height: 32px;
+    margin: 0 0 32px;
+  }
+
+  @media (min-width: $desktop) {
+    font-size: 34px;
+    line-height: 40px;
+  }
+}
+
+.partners__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  @media (min-width: $tablet) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+  }
+}
+
+.partners__item {
+  margin: 0 0 20px;
+
+  @media (min-width: $tablet) {
+    margin: 0;
+    height: 100%;
+  }
+}
+
+.partners__additional {
+  margin: 21px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  @media (min-width: $tablet) {
+    margin: 40px 0 0;
+    align-items: center;
+  }
+
+  @media (min-width: $desktop) {
+    margin: 58px 0 0;
+  }
+}
+
+.partners__link {
+  @include link-border(var(--link-color, $link-color));
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--link-color, $link-color);
+  max-width: 50%;
+
+  @media (min-width: $tablet) {
+    font-size: 16px;
+    align-items: center;
+  }
+
+  svg {
+    fill: none;
+    flex-shrink: 0;
+    margin: 3px 9px 0 0;
+    animation-name: loadingSvg;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-play-state: paused;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+
+    @media (min-width: $tablet) {
+      margin: 0 9px 0 0;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    svg {
+      animation-play-state: running;
+    }
+  }
+
+  &:active {
+    svg {
+      animation-duration: 0.5s;
+    }
+  }
+}
+
+.partners__counter {
+  color: var(--alternative-color, $alternative-color);
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+
+  @media (min-width: $tablet) {
+    font-size: 16px;
+  }
+}
+
+.partners__counter-text {
+  @media (max-width: $tablet - 1px) {
+    @include visually-hidden();
+  }
+}
+
+@keyframes loadingSvg {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

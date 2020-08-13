@@ -1,0 +1,58 @@
+@mixin visually-hidden() {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+@mixin link() {
+  transition: 0.2s color;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    color: var(--link-color, $link-color);
+  }
+
+  &:active {
+    color: var(--accent-color, $accent-color);
+  }
+}
+
+@mixin link-border($color: #ffffff) {
+  position: relative;
+  transition: 0.2s color;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    width: 0;
+    height: 1px;
+    background-color: $color;
+    transition: 0.2s width;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+
+    &::after {
+      right: auto;
+      left: 0;
+      width: 100%;
+    }
+  }
+
+  &:active {
+    color: var(--link-color, $link-color);
+  }
+}

@@ -1,0 +1,6 @@
+form.subscribe(action="#")
+  label.visually-hidden(for="subscribe") Ваш E-mail
+  input#subscribe.subscribe__input(placeholder="Подпишитесь на рассылку новостей", type="email", name="email")
+  button.subscribe__submit(aria-label="Подписаться")
+    svg(width="16", height="12", aria-hidden="true")
+      use(xlink:href="#icon_arrow")

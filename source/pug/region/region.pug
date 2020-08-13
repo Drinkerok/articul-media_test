@@ -1,0 +1,22 @@
+.region
+  .container
+    .region__head
+      include ./../components/logo
+      include ./../components/back
+      h1.region__header
+        |Отраслевая спецификация региона
+        span.visually-hidden &nbsp;Камчатский край
+      include ./anchors
+
+    .region__img-wrapper
+      picture
+        source(type="image/webp", media="(min-width: 1440px)", srcset="img/banner-desktop@1x.webp 1x, img/banner-desktop@2x.webp 2x")
+        source(type="image/webp", media="(min-width: 768px)", srcset="img/banner-tablet@1x.webp 1x, img/banner-tablet@2x.webp 2x")
+        source(type="image/webp", srcset="img/banner-mobile@1x.webp 1x, img/banner-mobile@2x.webp 2x")
+        source(media="(min-width: 1440px)", srcset="img/banner-desktop@1x.jpg 1x, img/banner-desktop@2x.jpg 2x")
+        source(media="(min-width: 768px)", srcset="img/banner-tablet@1x.jpg 1x, img/banner-tablet@2x.jpg 2x")
+        img.region__img(src="img/banner-mobile@1x.jpg", srcset="img/banner-mobile@1x.jpg 2x", alt="Вид региона")
+    .region__about
+      include ./industries
+
+      include ./../partners/partners

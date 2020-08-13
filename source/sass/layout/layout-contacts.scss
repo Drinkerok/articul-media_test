@@ -1,0 +1,26 @@
+.layout-contacts {
+  color: #ffffff;
+  font-size: 14px;
+
+  @media (min-width: $tablet) {
+    font-size: 16px;
+  }
+}
+
+.layout-contacts__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.layout-contacts__item {
+  margin: 0 0 8px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.layout-contacts a {
+  @include link-border();
+}

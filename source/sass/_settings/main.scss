@@ -1,0 +1,84 @@
+:root {
+  --accent-color: #{$accent-color};
+  --alternative-color: #{$alternative-color};
+  --link-color: #{$link-color};
+  --text-color: #{$text-color};
+  --button-color: #{$button-color};
+  --border-color: #{$border-color};
+  --font-family: #{$main-font-family};
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  min-width: $mobile;
+}
+
+body {
+  margin: 0;
+  color: var(--text-color, $text-color);
+  font-family: var(--font-family, 'Montserrat'), sans-serif;
+  font-size: 12px;
+  line-height: 24px;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  min-width: $mobile;
+
+  @media (min-width: $tablet) {
+    font-size: 13px;
+  }
+
+  @media (min-width: $desktop) {
+    font-size: 14px;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input,
+button,
+textarea {
+  font: inherit;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100vw;
+
+  @media (min-width: $tablet) {
+    padding: 0 48px;
+  }
+
+  @media (min-width: $desktop) {
+    padding: 0;
+    max-width: $desktop-content-width;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

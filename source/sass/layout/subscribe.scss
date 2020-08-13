@@ -1,0 +1,61 @@
+.subscribe {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.subscribe__input {
+  font-size: 14px;
+  padding: 8px 0;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  flex-grow: 1;
+  color: #ffffff;
+
+  &::placeholder {
+    color: #ffffff;
+  }
+
+  @media (min-width: $tablet) {
+    font-size: 16px;
+  }
+}
+
+.subscribe__submit {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--button-color);
+  border: none;
+  border-radius: 50%;
+  flex-shrink: 0;
+  padding: 0;
+  margin: 0 0 0 3px;
+
+  @media (min-width: $tablet) {
+    margin: 0 0 0 7px;
+  }
+
+  @media (min-width: $desktop) {
+    margin: 0 0 0 15px;
+  }
+
+  svg {
+    transition: 0.2s transform;
+  }
+
+  &:hover {
+    svg {
+      transform: translateX(3px);
+    }
+  }
+
+  &:active {
+    svg {
+      transform: translateX(6px);
+    }
+  }
+}

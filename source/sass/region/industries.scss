@@ -1,0 +1,57 @@
+.industries__header {
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: bold;
+  padding: 0;
+  margin: 0 0 20px;
+
+  @media (min-width: $tablet) {
+    font-size: 27px;
+    line-height: 32px;
+    margin: 0 0 24px;
+  }
+
+  @media (min-width: $desktop) {
+    font-size: 34px;
+    line-height: 40px;
+    margin: 0 0 32px;
+  }
+}
+
+.industries__description {
+  margin: 0;
+
+  & + & {
+    margin-top: 1em;
+  }
+}
+
+.industries__list {
+  list-style: none;
+  padding: 0;
+  margin: 32px 0 0;
+
+  @media (min-width: $tablet) {
+    margin: 55px 0 0;
+  }
+
+  @media (min-width: $desktop) {
+    margin: 64px 0 0;
+  }
+}
+
+.industries__item {
+  margin: 0 0 36px;
+
+  @media (min-width: $tablet) {
+    margin: 0 0 56px;
+  }
+
+  @media (min-width: $desktop) {
+    margin: 0 0 64px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
