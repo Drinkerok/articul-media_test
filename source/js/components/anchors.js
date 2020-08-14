@@ -10,7 +10,7 @@ document.querySelectorAll('.anchors').forEach((anchorsEl) => anchorsEl.addEventL
 
   evt.preventDefault();
   const anchorName = linkEl.getAttribute('href').slice(1);
-  const targetEl = document.querySelector(`a[name="${anchorName}"]`);
+  const targetEl = document.querySelector(`#${anchorName}`);
   if (!targetEl) {
     return;
   }
@@ -29,7 +29,7 @@ const anchorsObserver = new IntersectionObserver((entries) => {
   }
 
   const lastEntry = intersectingEntries[intersectingEntries.length - 1];
-  const anchorName = lastEntry.target.name;
+  const anchorName = lastEntry.target.id;
   anchorLinkEls.forEach((el) => {
     if (el.getAttribute('href').slice(1) === anchorName) {
       el.classList.add('anchors__link--active');
@@ -44,8 +44,7 @@ const anchorLinkEls = [...document.querySelectorAll('.anchors__link')];
 anchorLinkEls
   .map((linkEl) => {
     const anchorName = linkEl.getAttribute('href').slice(1);
-    const targetLinkEl = document.querySelector(`a[name="${anchorName}"]`);
-    return targetLinkEl;
+    return document.querySelector(`#${anchorName}`);
   })
   .filter((targetEl) => !!targetEl)
   .forEach((targetEl) => anchorsObserver.observe(targetEl));

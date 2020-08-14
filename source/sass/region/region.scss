@@ -10,6 +10,8 @@
   }
 
   .container {
+    position: relative;
+
     @media (min-width: $tablet) {
       display: grid;
       grid-template-columns: 270px 1fr;
